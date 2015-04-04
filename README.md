@@ -1,4 +1,2 @@
-# tedtkang
-code for tedtkang.com
-- should mostly just be some static pages
-
+# rails-webapp-base
+some base architecture for making a rails webapp

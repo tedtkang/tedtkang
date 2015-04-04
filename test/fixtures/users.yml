@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+ted:
+  email: ted@ted.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.now %>  
+
+liz:
+  email: liz@liz.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.now %>  
