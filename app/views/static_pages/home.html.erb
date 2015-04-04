@@ -1,9 +1,18 @@
 <% provide(:title, "home") %>
-<div class="center jumbotron">
-  <h1>base web app</h1>
+<aside>
+  <%= image_tag "tedkang.jpeg", :class => "circular" %> 
+  <div class="subtext"> 
+    <%= link_to content_tag(:i, "CV", class: 'fa fa-file'), root_path << "tedtkang-2015.pdf" %>
+    <%= link_to content_tag(:i, nil, class: 'fa fa-linkedin-square') , "http://www.linkedin.com/in/tedtkang" %>
+    <%= mail_to "tedtkang@gmail.com" do %>
+      <%= fa_icon "envelope" %>
+    <% end %>
+  </div>
+</aside>
+<section class="main">
+<h1>Ted Kang</h1>
+<p class="center">Software Engineer.  Previously at Oracle, Zoosk, SimplyInsured</p>
+<p class="center">Interested in the intersect of technology and law.</p>
+</section>
 
-  <h2>
-    This is the home page!
-  </h2>
 
-</div>

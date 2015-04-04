@@ -7,10 +7,10 @@ gem 'rails', '4.2.0'
 gem 'bcrypt', '3.1.7'
 # For creating fake seed users
 gem 'faker', '1.4.2'
-
 # For easy meta tags
 gem 'metamagic', '3.1.6'
-
+# font icons and styles
+gem "font-awesome-rails"
 # User sass with bootstrap for styling
 gem 'bootstrap-sass',       '3.2.0.0'
 # awesome print!

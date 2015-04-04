@@ -8,10 +8,13 @@
     <%= csrf_meta_tags %>
     <%= metamagic description: "Ted Taiho Kang: zug zug", keywords: ["ted kang", "ted taiho kang", "tedtkang", "tkang", "ted", "kang"] %>
     <%= favicon_link_tag 'favicon.ico' %>    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <%= render 'layouts/shim' %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
+    <% if false %>
+      <%= render 'layouts/header' %>
+    <% end %>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
