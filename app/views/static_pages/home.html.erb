@@ -1,19 +1,21 @@
-<% provide(:title, "home") %>
 <aside>
   <%= image_tag "tedkang.jpeg", :class => "circular" %> 
-  <div class="subtext"> 
-    <%= link_to content_tag(:i, "CV", class: 'fa fa-file'), root_path << "tedtkang-2015.pdf" %>
-    <%= link_to content_tag(:i, nil, class: 'fa fa-linkedin-square') , "http://www.linkedin.com/in/tedtkang" %>
-    <%= mail_to "tedtkang@gmail.com" do %>
-      <%= fa_icon "envelope" %>
-    <% end %>
-  </div>
 </aside>
 <section class="main">
 <h1>Ted Kang</h1>
-<p class="center">Software Engineer.  MIT BS 2008.  MEng 2009.</p>
-<p class="center">  Previously at Oracle, Zoosk, SimplyInsured.</p>
-<p class="center"> Currenty interested in the intersection of technology, law, and policy.</p>
+<p class="contact">
+  <%= link_to content_tag(:i, " CV ", class: 'fa fa-file'), root_path << "tedtkang-2015.pdf" %>
+  &bull;
+  <%= link_to content_tag(:i, " Blog ", class: 'fa fa-pencil'), '#' %>
+  &bull;
+  <%= link_to content_tag(:i, nil, class: 'fa fa-linkedin-square') , "http://www.linkedin.com/in/tedtkang" %>
+  &bull;
+  <%= mail_to "tedtkang@gmail.com" do %>
+    <%= fa_icon "envelope", class: "fa" %>
+  <% end %>  
+</p>
+<p>Software Engineer. Previously at Oracle, Zoosk, SimplyInsured.<br>
+Currently interested in the intersection of technology and law.</p>
 </section>
 
 
