@@ -42,11 +42,12 @@ server 'ec2-54-175-152-80.compute-1.amazonaws.com', user: 'ubuntu', roles: %w{we
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+ set :ssh_options, {
+   keys: %w(/Users/tkang/.ssh/tkang-aws.pem),
+   forward_agent: true,
+   keepalive: true,
+   auth_methods: %w(publickey password)
+ }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------

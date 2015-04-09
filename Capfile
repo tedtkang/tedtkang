@@ -1,6 +1,9 @@
 # Load DSL and set up stages
 require 'capistrano/setup'
 
+# Tool to help debug cap ssh issues.
+require 'capistrano/ssh_doctor'
+
 # Include default deployment tasks
 require 'capistrano/deploy'
 

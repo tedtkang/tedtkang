@@ -47,6 +47,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
+  gem 'capistrano-ssh-doctor', '~> 1.0'
 end
 
 group :development, :test do
