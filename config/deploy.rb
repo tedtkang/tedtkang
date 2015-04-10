@@ -38,6 +38,9 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for default_env is {}
 set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
+set :unicorn_pid_file, "tmp/pids/unicorn.pid"
+
+
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 

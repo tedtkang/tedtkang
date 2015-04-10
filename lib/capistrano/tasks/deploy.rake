@@ -9,25 +9,34 @@ namespace :deploy do
     end
   end
 
-  %w[start stop restart].each do |command|
-    desc "#{command} Unicorn server."
-    task command do
-      on roles(:app) do
-        execute "sudo service unicorn #{command}"
-      end
+  desc "Kill the unicorn server"
+  task :unicorn_kill do
+    on roles(:app) do
+      unicorn_pid = capture(:cat, '/home/ubuntu/tedtkang/tmp/pids/unicorn.pid') rescue nil
+      execute :kill, unicorn_pid
     end
   end
 
-  desc "Restart Nginx server."
-    task :nginx_restart do
-      on roles(:app) do
-        execute "sudo service nginx restart"
-      end
+  desc "Start the unicorn server"
+  task :unicorn_start do
+    on roles(:app) do
+      execute "sudo service unicorn start"
     end
+  end
+
+
+  desc "Restart Nginx server."
+  task :nginx_restart do
+    on roles(:app) do
+      execute "sudo service nginx restart"
+    end
+  end
 
   before :deploy, "deploy:check_revision"
-  after :deploy, "deploy:restart"
+  after :deploy, "deploy:unicorn_kill"
+  after :deploy, "deploy:unicorn_start"
   after :deploy, "deploy:nginx_restart"
-  after :rollback, "deploy:restart"    
+  after :rollback, "deploy:unicorn_kill"
+  after :rollback, "deploy:unicorn_start"
   after :rollback, "deploy:nginx_restart"
 end
