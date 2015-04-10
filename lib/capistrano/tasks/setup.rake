@@ -1,6 +1,6 @@
 namespace :setup do
 
-  desc "Upload database.yml file."
+  desc "Upload database.yml/secrets.yml file."
   task :upload_yml do
     on roles(:app) do
       execute "mkdir -p #{shared_path}/config"
@@ -19,4 +19,6 @@ namespace :setup do
       end
     end
   end
+
+  before :deploy, "setup:upload_yml"
 end
