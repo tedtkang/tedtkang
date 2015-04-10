@@ -24,5 +24,10 @@ test:
   database: base_webapp_test
 
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  username: tkang
+  password: wRqk11Vn
+  host: tedtkangdb1.ckqoczk9nrk3.us-east-1.rds.amazonaws.com
+  port: 3306
   database: base_webapp_prod
