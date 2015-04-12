@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if logged_in?
+      redirect_to posts_path
+    end
   end
 
   def create
@@ -8,7 +11,8 @@ class SessionsController < ApplicationController
       if user.activated?
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-        redirect_back_or user
+        ### This is all extra shit.  Just redirect to main posts page now.
+        redirect_back_or posts_path
       else
         message  = "Account not activated. "
         message += "Check your email for the activation link."
