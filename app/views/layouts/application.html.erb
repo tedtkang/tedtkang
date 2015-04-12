@@ -18,9 +18,11 @@
       <%= render 'layouts/header' %>
     <% end %>
     <div class="container">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>    
+      <% if false %>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>    
+      <% end %>
       <%= yield %>
       <% if false %>      
         <%= render 'layouts/footer' %>
