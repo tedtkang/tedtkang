@@ -4,6 +4,10 @@ class BlogController < ApplicationController
     @posts = Post.all.reject{ |p| p == Post.last }
   end
 
+  def archives
+    @posts = Post.all.order('created_at DESC')
+  end
+
 
 
 end

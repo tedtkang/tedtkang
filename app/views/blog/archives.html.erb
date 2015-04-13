@@ -1,0 +1,5 @@
+<h1 class="center">ARCHIVES</h1>
+
+<% @posts.each do |post| %>
+  <%= post.created_at.strftime('%F') %> - <%= post.title %><br>
+<% end %> 
