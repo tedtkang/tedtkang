@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # This is the actual public blog.
   get 'b' => 'blog#home'
   get 'archives' => 'blog#archives'
+  get 'b/:id' => 'blog#previous'
 
   # These routes all require authentication.  Effectively the blog admin pages.
   resources :posts
