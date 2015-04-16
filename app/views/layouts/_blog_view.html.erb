@@ -1,5 +1,8 @@
-<h1 class="blog-title"><%= @post.title %></h1>
-<h2 class="blog-postdate"><%= @post.created_at.strftime('%B %d, %Y') %></h2>
-<%= simple_format @post.body %>
-
-<%= render 'layouts/blog_footer' %>
+<% if @posts == nil %>
+  Nothing to see here ... yet
+<% else %>
+  <h1 class="blog-title"><%= @post.title %></h1>
+  <h2 class="blog-postdate"><%= @post.created_at.strftime('%B %d, %Y') %></h2>
+  <%= simple_format @post.body %>
+  <%= render 'layouts/blog_footer' %>
+<% end %>

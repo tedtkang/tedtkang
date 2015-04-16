@@ -17,13 +17,6 @@ namespace :deploy do
     end
   end
 
-  desc "Do a db:mgirate"
-  task :db_migrate do
-    on roles(:app) do
-      execute "rake db:migrate"
-    end
-  end
-
   desc "Start the unicorn server"
   task :unicorn_start do
     on roles(:app) do
@@ -41,7 +34,7 @@ namespace :deploy do
 
   before :deploy, "deploy:check_revision"
   after :deploy, "deploy:unicorn_kill"
-  after :deploy, "deploy:db_migrate"
+  after :deploy, "deploy:migrate"
   after :deploy, "deploy:unicorn_start"
   after :deploy, "deploy:nginx_restart"
   after :rollback, "deploy:unicorn_kill"
