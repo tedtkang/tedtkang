@@ -2,11 +2,11 @@
   <%= image_tag "tedkang.jpeg", :class => "circular" %> 
 </aside>
 <section class="main">
-<h1>Ted Kang</h1>
-<p class="contact">
+<h1 class="center">Ted Kang</h1>
+<p class="contact center">
   <%= link_to content_tag(:i, " CV ", class: 'fa fa-file'), root_path << "tedtkang-2015.pdf" %>
   &bull;
-  <%= link_to content_tag(:i, " Blog ", class: 'fa fa-pencil'), '#' %>
+  <%= link_to content_tag(:i, " Blog ", class: 'fa fa-pencil'), b_path %>
   &bull;
   <%= link_to content_tag(:i, nil, class: 'fa fa-linkedin-square') , "http://www.linkedin.com/in/tedtkang" %>
   &bull;
@@ -14,7 +14,7 @@
     <%= fa_icon "envelope", class: "fa" %>
   <% end %>  
 </p>
-<p>Software Engineer. Previously at Oracle, Zoosk, SimplyInsured.<br>
+<p class="center">Software Engineer. Previously at Oracle, Zoosk, SimplyInsured.<br>
 Currently interested in the intersection of technology and law.</p>
 </section>
 

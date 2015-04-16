@@ -58,21 +58,18 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 5px;
-  text-align: center;
 }
 
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.2em;
-  text-align: center;
 }
 
 /* circular for images */
@@ -91,33 +88,45 @@ p {
   vertical-align: middle;
 }
 
+/* blog styles */
+
+.twitter {
+  float: left;
+  font-style: italic;
+  padding-top: 10px;
+}
+
+.archives {
+  float: right;
+  padding-top: 10px;
+}
+
 
 /* header */
 
-#logo {
+.header-links {
   float: left;
-  margin-right: 10px;
+  margin-left: 3px;
+  margin-right: 6px;
   font-size: 1.7em;
-  color: rgb(239, 241, 245);
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: white;
+    color: blue;
     text-decoration: none;
   }
 }
+
 
 /* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  border-top: 1.5px solid rgb(79, 91, 102);
   a {
-    color: $gray;
     &:hover {
       color: $gray-darker;
     }

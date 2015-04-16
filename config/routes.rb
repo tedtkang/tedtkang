@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
   root             'static_pages#home'
   
+  # This is the actual public blog.
+  get 'b' => 'blog#home'
+  get 'archives' => 'blog#archives'
+  get 'b/:id' => 'blog#previous'
+
+  # These routes all require authentication.  Effectively the blog admin pages.
+  resources :posts
+
+  # You need to log in to be able to write new blog posts and such.
+  get 'login'   => 'sessions#new'
+  post 'login'  => 'sessions#create'
+  delete 'logout'   => 'sessions#destroy'
+
   # get 'help'    => 'static_pages#help'
   # get 'about'   => 'static_pages#about'
   # get 'contact' => 'static_pages#contact'
@@ -10,8 +23,7 @@ Rails.application.routes.draw do
   # get 'password_resets/new'
   # get 'password_resets/edit'
   # get 'signup'  => 'users#new'
-  # get 'login'   => 'sessions#new'
-  # post 'login'  => 'sessions#create'
+  
   # delete 'logout'   => 'sessions#destroy'
   # resources :users
   # resources :account_activations, only: [:edit]

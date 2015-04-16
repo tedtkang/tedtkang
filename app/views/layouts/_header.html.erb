@@ -1,11 +1,5 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top">
   <div class="header-container">
-    <%= link_to "tedtkang", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
-      </ul>
-    </nav>
+    <%= link_to content_tag(:i, "", class: 'fa fa-home fa-2x header-links'), root_path %>
   </div>
 </header>

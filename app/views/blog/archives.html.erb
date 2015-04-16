@@ -1,0 +1,5 @@
+<h1 class="center">ARCHIVES</h1>
+
+<% @posts.each do |post| %>
+  <%= post.created_at.strftime('%F') %> - <%= link_to post.title, '/b/' + post.id.to_s %><br>
+<% end %> 
