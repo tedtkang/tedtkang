@@ -41,7 +41,7 @@ namespace :deploy do
 
   before :deploy, "deploy:check_revision"
   after :deploy, "deploy:unicorn_kill"
-
+  after :deploy, "deploy:db_migrate"
   after :deploy, "deploy:unicorn_start"
   after :deploy, "deploy:nginx_restart"
   after :rollback, "deploy:unicorn_kill"
