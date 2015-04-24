@@ -34,7 +34,10 @@ namespace :deploy do
 
   before :deploy, "deploy:check_revision"
   after :deploy, "deploy:unicorn_kill"
-  after :deploy, "deploy:migrate"
+  # The DB migration and asset compliation happen automatically
+  # because we included them in the Capfile.
+  # after :deploy, "deploy:migrate"
+  # after :deploy, "deploy:compile_assets"
   after :deploy, "deploy:unicorn_start"
   after :deploy, "deploy:nginx_restart"
   after :rollback, "deploy:unicorn_kill"
